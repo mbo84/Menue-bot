@@ -3,6 +3,7 @@ import PyPDF2
 import io
 import datetime
 
+
 # --- 1. AUTOMATISCHE DATUMSERKENNUNG ---
 heute = datetime.date.today()
 JAHR = heute.strftime("%Y")          
