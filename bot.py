@@ -16,7 +16,7 @@ BASIS_URL = "https://labocca.ch/wp-content/uploads/"
 PDF_URL = f"{BASIS_URL}{JAHR}/{MONAT}/Tagesmenu-{KALENDERWOCHE}_Grossacker.pdf"
 
 # Deine Lieblingsgerichte
-SUCHBEGRIFFE = ["Bratwurst", "Schnitzel", "Pizza", "Cordon Bleu", "Cheeseburger"]
+SUCHBEGRIFFE = ["Bratwurst", "Cordon Bleu", "Cheeseburger"]
 
 # Deine Telegram-Codes einfügen
 TELEGRAM_BOT_TOKEN = "8619475311:AAFUlW3y1ZBF7naGJ_AzZdmkzq9of6GmDnQ"
@@ -55,7 +55,7 @@ def check_menu():
                 gefundene_menues.append(begriff)
                 
         if gefundene_menues:
-            nachricht = f"🚨 Treffer im Menüplan! Heute gibt es: {', '.join(gefundene_menues)}"
+            nachricht = f"🚨 Treffer im Menüplan! Diese Woche gibt es: {', '.join(gefundene_menues)}"
             sende_telegram_nachricht(nachricht)
             print("Treffer gefunden und Nachricht verschickt!")
         else:
