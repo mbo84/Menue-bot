@@ -13,7 +13,7 @@ KALENDERWOCHE = heute.strftime("%V")
 # --- 2. DEINE DATEN (HIER ANPASSEN) ---
 # Ersetze dies durch die echte Webadresse deiner Kantine
 BASIS_URL = "https://labocca.ch/wp-content/uploads/" 
-PDF_URL = {BASIS_URL}{JAHR}/{MONAT}/tagesmenu{KALENDERWOCHE_Grossacker.pdf
+PDF_URL = {BASIS_URL}{JAHR}/{MONAT}/tagesmenu{KALENDERWOCHE}_Grossacker.pdf
 # https://labocca.ch/wp-content/uploads/2026/05/tagesmenu_20.pdf
 #https://labocca.ch/wp-content/uploads/2026/07/Tagesmenue28_Grossacker.pdf
 #
