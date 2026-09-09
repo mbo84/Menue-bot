@@ -8,8 +8,8 @@ import datetime
 
 # --- 2. DEINE DATEN (HIER ANPASSEN) ---
 # Ersetze dies durch die echte Webadresse deiner Kantine
-BASIS_URL = "https://labocca.ch/wp-content/uploads" 
-PDF_URL = f"{BASIS_URL}/{JAHR}/{MONAT}/tagesmenu{KALENDERWOCHE}_Grossacker.pdf"
+#BASIS_URL = "https://labocca.ch/wp-content/uploads" 
+#PDF_URL = f"{BASIS_URL}/{JAHR}/{MONAT}/tagesmenu{KALENDERWOCHE}_Grossacker.pdf"
 
 import datetime
 import requests
