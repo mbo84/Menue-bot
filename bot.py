@@ -4,16 +4,47 @@ import io
 import datetime
 
 
-# --- 1. AUTOMATISCHE DATUMSERKENNUNG ---
-heute = datetime.date.today()
-JAHR = heute.strftime("%Y")          
-MONAT = heute.strftime("%m")         
-KALENDERWOCHE = heute.strftime("%V") 
+
 
 # --- 2. DEINE DATEN (HIER ANPASSEN) ---
 # Ersetze dies durch die echte Webadresse deiner Kantine
 BASIS_URL = "https://labocca.ch/wp-content/uploads" 
 PDF_URL = f"{BASIS_URL}/{JAHR}/{MONAT}/tagesmenu{KALENDERWOCHE}_Grossacker.pdf"
+
+import datetime
+import requests
+
+# --- 1. AUTOMATISCHE DATUMSERKENNUNG ---
+heute = datetime.date.today()
+JAHR = heute.strftime("%Y")
+MONAT = heute.strftime("%m")
+KALENDERWOCHE = heute.strftime("%V")
+
+# --- 2. BASIS-URL ---
+BASIS_URL = "https://labocca.ch/wp-content/uploads"
+
+# --- 3. MÖGLICHE URLS ---
+url_varianten = [
+    f"{BASIS_URL}/{JAHR}/{MONAT}/tagesmenu{KALENDERWOCHE}_Grossacker.pdf",
+    f"{BASIS_URL}/{JAHR}/{MONAT}/tagesmenue{KALENDERWOCHE}_Grossacker.pdf",
+]
+
+# --- 4. EXISTIERENDE URL FINDEN ---
+PDF_URL = None
+
+for url in url_varianten:
+    try:
+        response = requests.head(url, allow_redirects=True, timeout=10)
+        if response.status_code == 200:
+            PDF_URL = url
+            break
+    except Exception:
+        pass
+
+if PDF_URL:
+    print(f"Gefunden: {PDF_URL}")
+
+
 #PDF_URL = {BASIS_URL}/{JAHR}/{MONAT}/tagesmenu{KALENDERWOCHE}_Grossacker.pdf
 # https://labocca.ch/wp-content/uploads/2026/05/tagesmenu_20.pdf
 #https://labocca.ch/wp-content/uploads/2026/07/Tagesmenue28_Grossacker.pdf
@@ -68,7 +99,8 @@ def check_menu():
         print("Fehler: Das PDF für diese Woche ist (noch) nicht online oder die URL ist falsch.")
     except Exception as e:
         print(f"Allgemeiner Fehler beim Überprüfen: {e}")
-
+else:
+    print("Kein Menü-PDF gefunden.")
 if __name__ == "__main__":
     check_menu()
 
