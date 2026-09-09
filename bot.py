@@ -43,7 +43,8 @@ for url in url_varianten:
 
 if PDF_URL:
     print(f"Gefunden: {PDF_URL}")
-
+else:
+    print("Kein Menü-PDF gefunden.")
 
 #PDF_URL = {BASIS_URL}/{JAHR}/{MONAT}/tagesmenu{KALENDERWOCHE}_Grossacker.pdf
 # https://labocca.ch/wp-content/uploads/2026/05/tagesmenu_20.pdf
@@ -99,8 +100,7 @@ def check_menu():
         print("Fehler: Das PDF für diese Woche ist (noch) nicht online oder die URL ist falsch.")
     except Exception as e:
         print(f"Allgemeiner Fehler beim Überprüfen: {e}")
-else:
-    print("Kein Menü-PDF gefunden.")
+
 if __name__ == "__main__":
     check_menu()
 
