@@ -23,4 +23,4 @@ jobs:
         run: pip install requests PyPDF2
 
       - name: Bot starten
-        run: python bot.py
+        run: python dailybot.py
