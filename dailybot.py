@@ -54,7 +54,7 @@ else:
 SUCHBEGRIFFE = ["Bratwurst", "Cordon Bleu", "Cheeseburger"]
 
 # Deine Telegram-Codes einfügen
-TELEGRAM_BOT_TOKEN = "8619475311:AAFUlW3y1ZBF7naGJ_AzZdmkzq9of6GmDnQ"
+TELEGRAM_BOT_TOKEN = "8619475311:AAGD5x-9wSvZxbzL-r2oKxFRe9k3T3YIMec"
 TELEGRAM_CHAT_ID = "1019541586"
 # ---------------------------------------
 
